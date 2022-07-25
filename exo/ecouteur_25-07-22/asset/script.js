@@ -18,11 +18,11 @@ function displayDate() {
  
 //-----------------------------------------------------------------------
 
-const mouseEvent = document.querySelector(".mouseEvent");
-const horizontal = document.querySelector(".horizontal");
-const vertical = document.querySelector(".vertical");
+const mouseEvent = document.querySelector(".mouseEvent"); // déclarer variable de ma div
+const horizontal = document.querySelector(".horizontal"); // de mes axes
+const vertical = document.querySelector(".vertical"); //""
 
-mouseEvent.addEventListener('mousemove', (e) => {
-  horizontal.innerHTML = e.x;
-  vertical.innerHTML = e.y;
+mouseEvent.addEventListener('mousemove', (e) => { // crée un écouteur avec une foction flécher 
+  horizontal.innerHTML = e.x; // remplacer le html de mon span horizontal par l'axe x trouver dans l'"event"
+  vertical.innerHTML = e.y; // remplacer le html de mon span vertical par l'axe y trouver dans l'"event" (console.log (event))
 })
