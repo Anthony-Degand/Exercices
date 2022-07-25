@@ -14,3 +14,5 @@ function displayDate() {
 
     document.getElementById("result02").innerHTML = `Je m'appelle ${text01} ${text02} et nous somme le ${new Date().toLocaleDateString()}`;
   }
+
+ 
