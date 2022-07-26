@@ -1,3 +1,6 @@
+
+//---------------------------------regExp--------------------------------------------------------------
+
 let form = document.querySelector("#loginForm"); // form pour identifier mon formulaire au complet
 
 
@@ -19,20 +22,30 @@ const validEmail = function (inputEmail){  // je crée ma fonction validEmail av
     let testEmail = emailRegExp.test(inputEmail.value); // crée une variable qui enregistre la contenue de mon input une fois tester par ma regex
     let small = inputEmail.nextElementSibling; // crée une variable small qui vaux l'élément juste au dessous de mon inputEmail 
     
-    
-    if (testEmail) { // si validez par ma regex
+    if (testEmail) { // si : validez par ma regex
         small.innerHTML = 'Adresse Valide';
         small.classList.remove('test-danger'); // retirer couleur rouge
         small.classList.add('test-success'); // ajouter couleur vert
+        
     }
-    else { // si refuser par ma regex
+    else { // si : refuser par ma regex
         small.innerHTML = 'Adresse Non Valide';
         small.classList.remove('test-success'); // retirer couleur vert
         small.classList.add('test-danger'); // ajouter couleur rouge
     }                                                                                                    
 };                                                                                                      
                                                                                                         
-                                                                                                        
-                                                                                                        
+//----------------------------------------local storage-------------------------------------------------                                                                                                        
+//mettre le boutton submit dans une variable                                                                                                        
+let btnEnvoyerFormulaire = document.querySelector('#connection');
+console.log(btnEnvoyerFormulaire);
+//assigner mon bouton a un écouteur de click qui engage une fonction :
+btnEnvoyerFormulaire.addEventListener("click", () => {
+//récupérer les données du formulaire
+                //et
+//stocker les saisie dans le local Storage
+localStorage.setItem("email",document.querySelector("#email").value);
+localStorage.setItem("ddn",document.querySelector("#ddn").value);
+localStorage.setItem("mdp",document.querySelector("#mdp").value);
 
-
+});
